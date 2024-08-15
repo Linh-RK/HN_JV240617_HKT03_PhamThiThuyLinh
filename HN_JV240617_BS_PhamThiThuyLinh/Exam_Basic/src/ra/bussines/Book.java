@@ -173,6 +173,15 @@ public class Book {
         if(currentIndex == -1){
             return 1;
         }else
+            for (int i = 0; i < currentIndex; i++) {
+                for(int j = i+1; j <= currentIndex; j++) {
+                    if(arrBook[i].getBookId() > arrBook[j].getBookId()){
+                        Book temp = arrBook[i];
+                        arrBook[i] = arrBook[j];
+                        arrBook[j] = temp;
+                    }
+                }
+            }
             return arrBook[currentIndex].getBookId() + 1;
     }
 
